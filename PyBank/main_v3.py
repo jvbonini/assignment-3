@@ -81,7 +81,6 @@ with open(file_to_output, "w") as txt_file:
     txt_file.write("Greatest Increase in P&L: " + str(greatest_increase[0]) + " ($" + str(greatest_increase[1]) + ")") 
     txt_file.write("\n")
     txt_file.write("Greatest Decrease in P&L: " + str(greatest_decrease[0]) + " ($" + str(greatest_decrease[1]) + ")")
-
   
 # Template
   #```text
@@ -89,7 +88,7 @@ with open(file_to_output, "w") as txt_file:
   #----------------------------
   #Total Months: 86
   #Total: $38382578
-  #Average  Change: $-2315.12
+  #Average  Change:  $446309.05 instead -$2315.12
   #Greatest Increase in Profits: Feb-2012 ($1926159)
   #Greatest Decrease in Profits: Sep-2013 ($-2196167)
   #```month
