@@ -1,5 +1,5 @@
-------------------------Financial Analysis------------------------Total Months: 86
-Total profitlosses: $38382578
-Average Change: $446309.05
-Greatest Increase: Feb-12 ($1926159)
-Greatest Decrease: Sep-13 ($-2196167)
+------------------------Financial Analysis for Pybank------------------------Total Number of Months: 86
+Total P&L: $38382578
+Average Change1: $86
+Greatest Increase in P&L: 12-Feb ($1926159)
+Greatest Decrease in P&L: 13-Sep ($-2196167)

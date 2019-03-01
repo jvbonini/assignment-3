@@ -16,13 +16,16 @@ file_to_output = "C:/Users/boninjv/Desktop/python-challenge/PyBank/Resources/bud
 # Declare in Memory Variables 
 total_months = 0
 total_profitlosses = 0
+
 prev_profitlosses = 0
 profitlosses_change = 0
+
 greatest_increase = ["", 0]
 greatest_decrease = ["", 9999999999999999999999]
+
 profitlosses_changes = []
 
-# Read data from the Resources folder
+# Get data from the Resources folder
 with open(file_to_load) as profitlosses_data:
     reader = csv.DictReader(profitlosses_data)
 
@@ -31,12 +34,14 @@ with open(file_to_load) as profitlosses_data:
 
         # Calculate total number of months included in the dataset
         total_months = total_months + 1
+
+        #The net total amount of P&L over the entire period
         total_profitlosses = total_profitlosses + int(row["profitlosses"])
-       
-        # Keep track of changes
+        
+        # Record changes
         profitlosses_change = int(row["profitlosses"]) - prev_profitlosses
         
-        # Reset the value of prev_profitlosses to the row I completed my analysis
+        # Reset the value of prev_profitlosses to the row 
         prev_profitlosses = int(row["profitlosses"])
         
         # Greatest increase in profits (date and amount) over the entire period
@@ -49,11 +54,12 @@ with open(file_to_load) as profitlosses_data:
             greatest_decrease[1] = profitlosses_change
             greatest_decrease[0] = row["Date"]
 
-        # Add to the profitlosses_changes list
+        # Add the value in the profitlosses_changes list
         profitlosses_changes.append(int(row["profitlosses"]))
-
-    # Set the average of the changes in P&L over the entire period
-    profitlosses_avg = sum(profitlosses_changes) / len(profitlosses_changes)
+     
+    
+    # The average of profitlosses_changes list
+        profitlosses_avg = sum(profitlosses_changes) / len(profitlosses_changes)
     
     # Show Output
     print()
@@ -63,7 +69,7 @@ with open(file_to_load) as profitlosses_data:
     print("-------------------------")
     print("Total Number of Months: " + str(total_months))
     print("Total P&L : " + "$" + str(total_profitlosses))
-    print("Average Change: " + "$" + str(round(sum(profitlosses_changes) / len(profitlosses_changes),2)))
+    print("Average Change: " + "$" + str(profitlosses_avg))
     print("Greatest Increase in P&L: " + str(greatest_increase[0]) + " ($" +  str(greatest_increase[1]) + ")") 
     print("Greatest Decrease in P&L: " + str(greatest_decrease[0]) + " ($" +  str(greatest_decrease[1]) + ")")
     
@@ -76,7 +82,7 @@ with open(file_to_output, "w") as txt_file:
     txt_file.write("\n")
     txt_file.write("Total P&L: " + "$" + str(total_profitlosses))
     txt_file.write("\n")
-    txt_file.write("Average Change: " + "$" + str(round(sum(profitlosses_changes) / len(profitlosses_changes),2)))
+    txt_file.write("Average Change1: " + "$" + str(profitlosses_avg))
     txt_file.write("\n")
     txt_file.write("Greatest Increase in P&L: " + str(greatest_increase[0]) + " ($" + str(greatest_increase[1]) + ")") 
     txt_file.write("\n")
